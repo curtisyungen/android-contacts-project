@@ -48,12 +48,6 @@ public class vRecyclerViewAdapter extends RecyclerView.Adapter<vRecyclerViewAdap
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_scrollview, parent, false);
-        view.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(v.getContext(), String.valueOf(v.getHeight()), Toast.LENGTH_LONG).show();
-            }
-        });
         return new ViewHolder(view);
     }
 

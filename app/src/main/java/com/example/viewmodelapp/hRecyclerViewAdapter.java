@@ -46,12 +46,6 @@ public class hRecyclerViewAdapter extends RecyclerView.Adapter<hRecyclerViewAdap
         //Log.d(TAG, "onCreateViewHolder called.");
 
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_recyclerview, parent, false);
-        view.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(v.getContext(), String.valueOf(v.getWidth()), Toast.LENGTH_SHORT).show();
-            }
-        });
         return new ViewHolder(view);
     }
 

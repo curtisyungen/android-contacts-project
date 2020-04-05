@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onChanged(Integer personId) {
                 Log.i(TAG, "new personId " + personId);
-                vRecyclerView.smoothScrollToPosition(personId);
+                //vRecyclerView.smoothScrollToPosition(personId);
                 hRecyclerView.smoothScrollToPosition(personId);
             }
         });
@@ -135,7 +135,6 @@ public class MainActivity extends AppCompatActivity {
         float itemHeight;
         float itemWidth;
 
-        double roundX = 0;
         double roundY = 0;
 
         private boolean snapped;

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/fragment_recyclerview"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:background="#fff"
+    android:gravity="center_horizontal"
+    android:orientation="horizontal"
+    android:paddingTop="5dp">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        app:cardCornerRadius="4dp"
+        app:cardElevation="1dp"
+        app:cardMaxElevation="2dp">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:layout_gravity="center"
+                android:contentDescription="@+string/avatar"
+                android:scaleType="centerCrop" />
+
+            <ImageView
+                android:id="@+id/image_border"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_gravity="center"
+                android:alpha="0"
+                android:contentDescription="@+string/border" />
+        </FrameLayout>
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

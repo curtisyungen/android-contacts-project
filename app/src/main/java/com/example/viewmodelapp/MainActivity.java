@@ -83,7 +83,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onChanged(Integer personId) {
                 Log.i(TAG, "new personId " + personId);
-                //vRecyclerView.smoothScrollToPosition(personId);
                 hRecyclerView.smoothScrollToPosition(personId);
             }
         });
@@ -135,6 +134,7 @@ public class MainActivity extends AppCompatActivity {
         float itemHeight;
         float itemWidth;
 
+        double roundX = 0;
         double roundY = 0;
 
         private boolean snapped;
@@ -173,8 +173,8 @@ public class MainActivity extends AppCompatActivity {
 
             if (recyclerView == hRecyclerView) {
                 scrollY = dx * (itemHeight / itemWidth);
-                roundY += scrollY - (int)scrollY;
 
+                roundY += scrollY - (int)scrollY;
                 if (Math.abs(roundY) > 1) {
                     scrollY += roundY;
                     roundY = 0;
@@ -185,6 +185,13 @@ public class MainActivity extends AppCompatActivity {
 
             if (recyclerView == vRecyclerView) {
                 scrollX = dy * (itemWidth / itemHeight);
+
+                roundX += scrollX - (int)scrollX;
+                Log.d("ROUND", String.format("roundX %s", roundX));
+                if (Math.abs(roundX) > 1) {
+                    scrollX += roundX;
+                    roundX = 0;
+                }
 
                 hRecyclerView.scrollBy((int) scrollX, 0);
             }
@@ -224,6 +231,7 @@ public class MainActivity extends AppCompatActivity {
 
             if (RecyclerView.SCROLL_STATE_IDLE == newState) {
                 recyclerView.setOnFlingListener(null);
+                mOriginatingRecyclerView = null;
                 snapped = true;
             }
         }
